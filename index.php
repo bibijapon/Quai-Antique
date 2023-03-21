@@ -1,16 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <title>Quai Antique</title>
-    <link rel="icon" type="image/x-icon" href="./img/icon logo.jpg">
-    <meta name="description" content="Venez découvrir la cuisine typiquement savoyard.">
-</head>
-<body>
-    
-</body>
-</html>
+<?php
+    require_once('templates/header.php');
+    require_once('lib/carte_resto.php');
+?>
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img src="./img/interieur restaurant.jpg" alt="interieur Quai Antique" wright="520" height="312">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">Découvrez la Gastronomie Savoyarde</></h1>
+                    <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus accusantium numquam iste praesentium voluptatem ipsam illum suscipit. Repellat, nam molestias neque nulla sapiente rerum asperiores excepturi pariatur recusandae obcaecati praesentium?</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <a href="reservations.php" class="btn btn-primary btn-lg px-4 me-md-2">Réserver une table</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <h2>Les classiques de la carte</h2>
+            <?php foreach($plats as $key => $plat) {
+                include('templates/carte_templates.php');
+            } ?>
+        </div>
+
+<?php
+    require_once('templates/footer.php');
+?>
